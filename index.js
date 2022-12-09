@@ -41,6 +41,6 @@ app.get("/", (req, res)=>{
 })
 
 
-app.listen(process.env.PORT || 3001, ()=>{
-    console.log("Server is running at 3001");
+app.listen(process.env.PORT || 3003, ()=>{
+    console.log("Server is running at 3000");
 })
