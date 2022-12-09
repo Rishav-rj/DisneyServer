@@ -2,9 +2,11 @@ const express = require("express");
 const mongoose = require('mongoose');
 const app = express();
 const path = require('path');
+const Cors = require("Cors");
 require('dotenv').config();
 
 app.use(express.json());
+app.use(Cors());
 
 mongoose.connect(process.env.MONGODB,
 {
