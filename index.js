@@ -19,6 +19,7 @@ const userRouter = require("./Routes/user.routes");
 app.use("/user", userRouter);
 
 app.get("/", (req, res)=>{
+    res.header("Access-Control-Allow-Origin", "http://localhost:3000");
     res.send("Server running")
 })
 
