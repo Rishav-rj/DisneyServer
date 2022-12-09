@@ -1,12 +1,12 @@
 const express = require("express");
 const mongoose = require('mongoose');
 const app = express();
-// const Cors = require("Cors");
+const Cors = require("Cors");
 const path = require('path');
 require('dotenv').config();
 
 app.use(express.json());
-// app.use(Cors());
+app.use(Cors());
 
 mongoose.connect(process.env.MONGODB,
 {
@@ -41,6 +41,6 @@ app.get("/", (req, res)=>{
 })
 
 
-app.listen(process.env.PORT, ()=>{
+app.listen(process.env.PORT || 3001, ()=>{
     console.log("Server is running at 3001");
 })
