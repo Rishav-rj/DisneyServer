@@ -2,6 +2,7 @@ const user = require("../Model/user.model");
 const bcrypt = require("bcrypt");
 
 module.exports.createUser = async (req, res) => {
+  res.header("Access-Control-Allow-Origin", "http://localhost:3000");
   const { name, email, password } = req.body;
   user.findOne({ email: email }, (err, User) => {
     if (User) {
@@ -15,6 +16,7 @@ module.exports.createUser = async (req, res) => {
 };
 
 module.exports.getUser = async (req, res) => {
+  res.header("Access-Control-Allow-Origin", "http://localhost:3000");
   const { email, password } = req.body;
   user.findOne({ email: email }, async (err, User) => {
     if (User) {
